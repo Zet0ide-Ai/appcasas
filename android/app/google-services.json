@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "198797375474",
+    "project_id": "crudbokunohero",
+    "storage_bucket": "crudbokunohero.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198797375474:android:5b72af87f806c623c51d6b",
+        "android_client_info": {
+          "package_name": "com.bnha.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC30CUgCNyOGXU7FkX1ALgOHgQiBO9TJR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

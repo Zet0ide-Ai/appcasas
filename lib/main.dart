@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Enciclopedia BNHA'),
+        title: const Text('Casas Disponibles (By TAZVR)'),
         backgroundColor: Colors.blue,
       ),
       body: FutureBuilder(
@@ -56,15 +56,15 @@ class _HomeState extends State<Home> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => PersonajeDetail(
-                          nombre: personaje['Nombre'],
-                          edad: personaje['Edad'],
-                          quirk: personaje['Quirk'],
+                          direccion: personaje['Dirección'],
+                          precio: personaje['precio'],
+                          descripcion: personaje['descripcion'],
                           imagen: personaje['Imagen'],
                         ),
                       ),
                     );
                   },
-                  child: Text(personaje['Nombre']),
+                  child: Text(personaje['Dirección']),
                 );
               },
             );
@@ -80,16 +80,16 @@ class _HomeState extends State<Home> {
 }
 
 class PersonajeDetail extends StatelessWidget {
-  final String nombre;
-  final int edad;
-  final String quirk;
+  final String direccion;
+  final int precio;
+  final String descripcion;
   final String imagen;
 
   const PersonajeDetail({
     super.key,
-    required this.nombre,
-    required this.edad,
-    required this.quirk,
+    required this.direccion,
+    required this.precio,
+    required this.descripcion,
     required this.imagen,
   });
 
@@ -97,51 +97,51 @@ class PersonajeDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(nombre),
+        title: Text(direccion),
         backgroundColor: Colors.blue,
       ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(imagen), 
-            fit: BoxFit.cover, 
+            image: NetworkImage(imagen),
+            fit: BoxFit.cover,
           ),
         ),
-        child: Center( 
+        child: Center(
           child: SingleChildScrollView(
             child: Container(
               padding: const EdgeInsets.all(16),
               color: Colors.black.withOpacity(0.7),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center, 
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Nombre: $nombre',
+                    'Dirección: $direccion',
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
-                    textAlign: TextAlign.center, 
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Edad: $edad años',
+                    'Precio: $precio pesos chilenos',
                     style: const TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                     ),
-                    textAlign: TextAlign.center, 
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Quirk: $quirk',
+                    'Descripción: $descripcion',
                     style: const TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                     ),
-                    textAlign: TextAlign.center, 
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),

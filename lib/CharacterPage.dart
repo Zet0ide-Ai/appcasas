@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CharacterPage extends StatelessWidget {
-  final String nombre;
-  final int edad;
-  final String quirk;
+  final String direccion;
+  final int precio;
+  final String descripcion;
   final String imagen;
 
   const CharacterPage({
     super.key,
-    required this.nombre,
-    required this.edad,
-    required this.quirk,
+    required this.direccion,
+    required this.precio,
+    required this.descripcion,
     required this.imagen,
   });
 
@@ -18,12 +18,12 @@ class CharacterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(nombre),
+        title: Text(direccion),
       ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(imagen), // Imagen de fondo.
+            image: AssetImage(imagen),
             fit: BoxFit.cover,
           ),
         ),
@@ -33,11 +33,11 @@ class CharacterPage extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(16.0),
-              color: Colors.black.withOpacity(0.7), // Fondo semitransparente.
+              color: Colors.black.withOpacity(0.7),
               child: Column(
                 children: [
                   Text(
-                    'Nombre: $nombre',
+                    'Dirección: $direccion',
                     style: const TextStyle(
                       fontSize: 24,
                       color: Colors.white,
@@ -46,12 +46,12 @@ class CharacterPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'Edad: $edad',
+                    'Precio: $precio',
                     style: const TextStyle(fontSize: 20, color: Colors.white),
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'Quirk: $quirk',
+                    'Descripción: $descripcion',
                     style: const TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ],
